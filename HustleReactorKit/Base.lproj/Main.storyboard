@@ -22,9 +22,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-q7-8mx">
-                                <rect key="frame" x="177.5" y="433" width="59" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몇 시 일까요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-q7-8mx">
+                                <rect key="frame" x="20" y="436.5" width="374" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -47,8 +47,10 @@
                             <constraint firstItem="0Er-PH-YqV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.75" id="5hS-kN-xq7"/>
                             <constraint firstItem="G4D-ZB-fXw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.25" id="5xj-De-Ohu"/>
                             <constraint firstItem="G4D-ZB-fXw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.5" id="6RY-Kk-sWg"/>
+                            <constraint firstItem="bNq-q7-8mx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IU3-JO-22o"/>
                             <constraint firstItem="gnm-H7-pAF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LCD-M1-h71"/>
                             <constraint firstItem="gnm-H7-pAF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="c1n-tK-tk4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bNq-q7-8mx" secondAttribute="trailing" constant="20" id="lFl-SC-Lmz"/>
                             <constraint firstItem="bNq-q7-8mx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="naj-tM-sCd"/>
                             <constraint firstItem="D7c-ny-JCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.5" id="oi0-P6-aoU"/>
                             <constraint firstItem="0Er-PH-YqV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pBA-fr-wUo"/>
