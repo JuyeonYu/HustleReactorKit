@@ -26,6 +26,7 @@ class TimeViewController: UIViewController, StoryboardView {
     
     func bind(reactor: TimeReactor) {
         timeButton.rx.tap
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
             .map { Reactor.Action.readTime }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
