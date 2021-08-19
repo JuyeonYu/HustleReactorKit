@@ -14,6 +14,10 @@
 		CEC69DF226CE8E7D00FFCB14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC69DF026CE8E7D00FFCB14 /* Main.storyboard */; };
 		CEC69DF426CE8E8000FFCB14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC69DF326CE8E8000FFCB14 /* Assets.xcassets */; };
 		CEC69DF726CE8E8000FFCB14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC69DF526CE8E8000FFCB14 /* LaunchScreen.storyboard */; };
+		CEC69DFF26CE9BF600FFCB14 /* TimeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69DFE26CE9BF600FFCB14 /* TimeReactor.swift */; };
+		CEC69E0126CE9E8600FFCB14 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E0026CE9E8600FFCB14 /* APIService.swift */; };
+		CEC69E0326CE9EDB00FFCB14 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E0226CE9EDB00FFCB14 /* APIManager.swift */; };
+		CEC69E0526CE9F9700FFCB14 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E0426CE9F9700FFCB14 /* TimeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		CEC69DF326CE8E8000FFCB14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC69DF626CE8E8000FFCB14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC69DF826CE8E8000FFCB14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC69DFE26CE9BF600FFCB14 /* TimeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeReactor.swift; sourceTree = "<group>"; };
+		CEC69E0026CE9E8600FFCB14 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CEC69E0226CE9EDB00FFCB14 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CEC69E0426CE9F9700FFCB14 /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
 		D936C7007D643ECD8DEC2EC9 /* Pods-HustleReactorKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HustleReactorKit.release.xcconfig"; path = "Target Support Files/Pods-HustleReactorKit/Pods-HustleReactorKit.release.xcconfig"; sourceTree = "<group>"; };
 		F712ECE68A23EAED65D70A1B /* Pods_HustleReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HustleReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -83,6 +91,10 @@
 				CEC69DEA26CE8E7D00FFCB14 /* AppDelegate.swift */,
 				CEC69DEC26CE8E7D00FFCB14 /* SceneDelegate.swift */,
 				CEC69DEE26CE8E7D00FFCB14 /* TimeViewController.swift */,
+				CEC69DFE26CE9BF600FFCB14 /* TimeReactor.swift */,
+				CEC69E0026CE9E8600FFCB14 /* APIService.swift */,
+				CEC69E0226CE9EDB00FFCB14 /* APIManager.swift */,
+				CEC69E0426CE9F9700FFCB14 /* TimeModel.swift */,
 				CEC69DF026CE8E7D00FFCB14 /* Main.storyboard */,
 				CEC69DF326CE8E8000FFCB14 /* Assets.xcassets */,
 				CEC69DF526CE8E8000FFCB14 /* LaunchScreen.storyboard */,
@@ -205,9 +217,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC69E0326CE9EDB00FFCB14 /* APIManager.swift in Sources */,
 				CEC69DEF26CE8E7D00FFCB14 /* TimeViewController.swift in Sources */,
+				CEC69E0126CE9E8600FFCB14 /* APIService.swift in Sources */,
+				CEC69E0526CE9F9700FFCB14 /* TimeModel.swift in Sources */,
 				CEC69DEB26CE8E7D00FFCB14 /* AppDelegate.swift in Sources */,
 				CEC69DED26CE8E7D00FFCB14 /* SceneDelegate.swift in Sources */,
+				CEC69DFF26CE9BF600FFCB14 /* TimeReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
