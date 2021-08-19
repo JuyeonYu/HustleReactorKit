@@ -74,3 +74,5 @@ ReactorKit으로 RxSwift와 놀아보기
 시간을 보여주는 이번 버전1은 곰튀김님의 유튜브에서 참고했습니다.
 
 https://www.youtube.com/watch?v=M58LqynqQHc
+
+버전2에서는 테이블뷰를 만들어보겠습니다.
