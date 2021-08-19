@@ -11,6 +11,7 @@ import ReactorKit
 class TimeReactor: Reactor {
     enum Action {
         case readTime
+        case clear
     }
     
     enum Mutation {
@@ -18,7 +19,7 @@ class TimeReactor: Reactor {
     }
     
     struct State {
-        var time: String = ""
+        var time: String = "몇 시 일까요?"
     }
     
     let initialState: State = State()
@@ -32,6 +33,8 @@ class TimeReactor: Reactor {
                     .map { $0.datetime }
                     .map { Mutation.setTime($0) }
             ])
+        case .clear:
+            return Observable.just(Mutation.setTime("몇 시 일까요?"))
         }
     }
     

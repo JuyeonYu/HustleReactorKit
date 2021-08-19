@@ -30,6 +30,11 @@ class TimeViewController: UIViewController, StoryboardView {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        clearButton.rx.tap
+            .map { Reactor.Action.clear}
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         reactor.state
             .map { $0.time }
             .bind(to: time.rx.text)
