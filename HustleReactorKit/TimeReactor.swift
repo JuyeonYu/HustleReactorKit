@@ -30,7 +30,6 @@ class TimeReactor: Reactor {
             return Observable.concat([
                 Observable.just(Mutation.setTime("Loading...")),
                 APIManager.shared.readTime()
-                    .map { $0.datetime }
                     .map { Mutation.setTime($0) }
             ])
         case .clear:
