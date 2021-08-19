@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9403D670A103BA08A5AC7CA5 /* Pods_HustleReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F712ECE68A23EAED65D70A1B /* Pods_HustleReactorKit.framework */; };
 		CEC69DEB26CE8E7D00FFCB14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69DEA26CE8E7D00FFCB14 /* AppDelegate.swift */; };
 		CEC69DED26CE8E7D00FFCB14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69DEC26CE8E7D00FFCB14 /* SceneDelegate.swift */; };
 		CEC69DEF26CE8E7D00FFCB14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69DEE26CE8E7D00FFCB14 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B2C52F697E842B3424EF8063 /* Pods-HustleReactorKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HustleReactorKit.debug.xcconfig"; path = "Target Support Files/Pods-HustleReactorKit/Pods-HustleReactorKit.debug.xcconfig"; sourceTree = "<group>"; };
 		CEC69DE726CE8E7D00FFCB14 /* HustleReactorKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HustleReactorKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC69DEA26CE8E7D00FFCB14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC69DEC26CE8E7D00FFCB14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		CEC69DF326CE8E8000FFCB14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC69DF626CE8E8000FFCB14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC69DF826CE8E8000FFCB14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D936C7007D643ECD8DEC2EC9 /* Pods-HustleReactorKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HustleReactorKit.release.xcconfig"; path = "Target Support Files/Pods-HustleReactorKit/Pods-HustleReactorKit.release.xcconfig"; sourceTree = "<group>"; };
+		F712ECE68A23EAED65D70A1B /* Pods_HustleReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HustleReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9403D670A103BA08A5AC7CA5 /* Pods_HustleReactorKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C9FBBA8847803B49876A0A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F712ECE68A23EAED65D70A1B /* Pods_HustleReactorKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30419A5823BFE4FFB8E46071 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2C52F697E842B3424EF8063 /* Pods-HustleReactorKit.debug.xcconfig */,
+				D936C7007D643ECD8DEC2EC9 /* Pods-HustleReactorKit.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CEC69DDE26CE8E7D00FFCB14 = {
 			isa = PBXGroup;
 			children = (
 				CEC69DE926CE8E7D00FFCB14 /* HustleReactorKit */,
 				CEC69DE826CE8E7D00FFCB14 /* Products */,
+				30419A5823BFE4FFB8E46071 /* Pods */,
+				2C9FBBA8847803B49876A0A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEC69DFB26CE8E8000FFCB14 /* Build configuration list for PBXNativeTarget "HustleReactorKit" */;
 			buildPhases = (
+				AC557300967808E738CC6648 /* [CP] Check Pods Manifest.lock */,
 				CEC69DE326CE8E7D00FFCB14 /* Sources */,
 				CEC69DE426CE8E7D00FFCB14 /* Frameworks */,
 				CEC69DE526CE8E7D00FFCB14 /* Resources */,
+				9264F90721B3BAF6908AAE22 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9264F90721B3BAF6908AAE22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HustleReactorKit/Pods-HustleReactorKit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HustleReactorKit/Pods-HustleReactorKit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HustleReactorKit/Pods-HustleReactorKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC557300967808E738CC6648 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HustleReactorKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEC69DE326CE8E7D00FFCB14 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		CEC69DFC26CE8E8000FFCB14 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2C52F697E842B3424EF8063 /* Pods-HustleReactorKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		CEC69DFD26CE8E8000FFCB14 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D936C7007D643ECD8DEC2EC9 /* Pods-HustleReactorKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
