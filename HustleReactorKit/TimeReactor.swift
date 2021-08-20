@@ -16,6 +16,7 @@ class TimeReactor: Reactor {
     
     enum Mutation {
         case setTime(String)
+        case setHasTime(Bool)
     }
     
     struct State {
@@ -32,10 +33,14 @@ class TimeReactor: Reactor {
             return Observable.concat([
                 Observable.just(Mutation.setTime("Loading...")),
                 APIManager.shared.readTime()
-                    .map { Mutation.setTime($0) }
+                    .map { Mutation.setTime($0) },
+                Observable.just(Mutation.setHasTime(true))
             ])
         case .clear:
-            return Observable.just(Mutation.setTime(State.timePlaceHolder))
+            return Observable.concat([
+                Observable.just(Mutation.setTime(State.timePlaceHolder)),
+                Observable.just(Mutation.setHasTime(false))
+            ])
         }
     }
     
@@ -44,7 +49,8 @@ class TimeReactor: Reactor {
         switch mutation {
         case let .setTime(time):
             newState.time = time
-            newState.hasTime = time != State.timePlaceHolder
+        case let .setHasTime(hasTime):
+            newState.hasTime = hasTime
         }
         return newState
     }
