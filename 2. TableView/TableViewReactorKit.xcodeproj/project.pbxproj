@@ -10,7 +10,7 @@
 		65EE03335F7730C39672F87B /* Pods_TableVIewReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DB8CF9557FAC37731ED00F /* Pods_TableVIewReactorKit.framework */; };
 		CEC69E3326CFE1A400FFCB14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3226CFE1A400FFCB14 /* AppDelegate.swift */; };
 		CEC69E3526CFE1A400FFCB14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3426CFE1A400FFCB14 /* SceneDelegate.swift */; };
-		CEC69E3726CFE1A400FFCB14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3626CFE1A400FFCB14 /* ViewController.swift */; };
+		CEC69E3726CFE1A400FFCB14 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3626CFE1A400FFCB14 /* UsersViewController.swift */; };
 		CEC69E3A26CFE1A400FFCB14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC69E3826CFE1A400FFCB14 /* Main.storyboard */; };
 		CEC69E3C26CFE1A600FFCB14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC69E3B26CFE1A600FFCB14 /* Assets.xcassets */; };
 		CEC69E3F26CFE1A600FFCB14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC69E3D26CFE1A600FFCB14 /* LaunchScreen.storyboard */; };
@@ -20,6 +20,7 @@
 		CEC69E4F26CFE2F000FFCB14 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E4E26CFE2F000FFCB14 /* CompanyModel.swift */; };
 		CEC69E5126CFE30000FFCB14 /* GeoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E5026CFE30000FFCB14 /* GeoModel.swift */; };
 		CEC69E5326CFE31A00FFCB14 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E5226CFE31A00FFCB14 /* AddressModel.swift */; };
+		CEC69E5A26CFE6C900FFCB14 /* UsersReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E5926CFE6C900FFCB14 /* UsersReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +29,7 @@
 		CEC69E2F26CFE1A400FFCB14 /* TableVIewReactorKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableVIewReactorKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC69E3226CFE1A400FFCB14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC69E3426CFE1A400FFCB14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEC69E3626CFE1A400FFCB14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEC69E3626CFE1A400FFCB14 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		CEC69E3926CFE1A400FFCB14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEC69E3B26CFE1A600FFCB14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC69E3E26CFE1A600FFCB14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +40,7 @@
 		CEC69E4E26CFE2F000FFCB14 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
 		CEC69E5026CFE30000FFCB14 /* GeoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoModel.swift; sourceTree = "<group>"; };
 		CEC69E5226CFE31A00FFCB14 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		CEC69E5926CFE6C900FFCB14 /* UsersReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersReactor.swift; sourceTree = "<group>"; };
 		EE032440CA907DED2EC304EA /* Pods-TableVIewReactorKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableVIewReactorKit.debug.xcconfig"; path = "Target Support Files/Pods-TableVIewReactorKit/Pods-TableVIewReactorKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +96,8 @@
 			children = (
 				CEC69E4B26CFE2AB00FFCB14 /* App */,
 				CEC69E4626CFE22900FFCB14 /* API */,
-				CEC69E3626CFE1A400FFCB14 /* ViewController.swift */,
+				CEC69E3626CFE1A400FFCB14 /* UsersViewController.swift */,
+				CEC69E5926CFE6C900FFCB14 /* UsersReactor.swift */,
 				CEC69E5426CFE34100FFCB14 /* Models */,
 				CEC69E3B26CFE1A600FFCB14 /* Assets.xcassets */,
 				CEC69E4026CFE1A600FFCB14 /* Info.plist */,
@@ -247,13 +250,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC69E3726CFE1A400FFCB14 /* ViewController.swift in Sources */,
+				CEC69E3726CFE1A400FFCB14 /* UsersViewController.swift in Sources */,
 				CEC69E3326CFE1A400FFCB14 /* AppDelegate.swift in Sources */,
 				CEC69E4A26CFE22900FFCB14 /* APIManager.swift in Sources */,
 				CEC69E4F26CFE2F000FFCB14 /* CompanyModel.swift in Sources */,
 				CEC69E4926CFE22900FFCB14 /* APIService.swift in Sources */,
 				CEC69E5326CFE31A00FFCB14 /* AddressModel.swift in Sources */,
 				CEC69E5126CFE30000FFCB14 /* GeoModel.swift in Sources */,
+				CEC69E5A26CFE6C900FFCB14 /* UsersReactor.swift in Sources */,
 				CEC69E4D26CFE2C500FFCB14 /* UserModel.swift in Sources */,
 				CEC69E3526CFE1A400FFCB14 /* SceneDelegate.swift in Sources */,
 			);
