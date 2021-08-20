@@ -67,6 +67,37 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AE6A3BCD26CF4BA90018B031 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CEC69DEA26CE8E7D00FFCB14 /* AppDelegate.swift */,
+				CEC69DEC26CE8E7D00FFCB14 /* SceneDelegate.swift */,
+				CEC69DF026CE8E7D00FFCB14 /* Main.storyboard */,
+				CEC69DF526CE8E8000FFCB14 /* LaunchScreen.storyboard */,
+				CEC69DF826CE8E8000FFCB14 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AE6A3BCE26CF4BAF0018B031 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CEC69E0026CE9E8600FFCB14 /* APIService.swift */,
+				CEC69E0226CE9EDB00FFCB14 /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		AE6A3BCF26CF4BB40018B031 /* 1. Time */ = {
+			isa = PBXGroup;
+			children = (
+				CEC69DEE26CE8E7D00FFCB14 /* TimeViewController.swift */,
+				CEC69DFE26CE9BF600FFCB14 /* TimeReactor.swift */,
+				CEC69E0426CE9F9700FFCB14 /* TimeModel.swift */,
+			);
+			path = "1. Time";
+			sourceTree = "<group>";
+		};
 		CEC69DDE26CE8E7D00FFCB14 = {
 			isa = PBXGroup;
 			children = (
@@ -88,17 +119,10 @@
 		CEC69DE926CE8E7D00FFCB14 /* HustleReactorKit */ = {
 			isa = PBXGroup;
 			children = (
-				CEC69DEA26CE8E7D00FFCB14 /* AppDelegate.swift */,
-				CEC69DEC26CE8E7D00FFCB14 /* SceneDelegate.swift */,
-				CEC69DEE26CE8E7D00FFCB14 /* TimeViewController.swift */,
-				CEC69DFE26CE9BF600FFCB14 /* TimeReactor.swift */,
-				CEC69E0026CE9E8600FFCB14 /* APIService.swift */,
-				CEC69E0226CE9EDB00FFCB14 /* APIManager.swift */,
-				CEC69E0426CE9F9700FFCB14 /* TimeModel.swift */,
-				CEC69DF026CE8E7D00FFCB14 /* Main.storyboard */,
+				AE6A3BCD26CF4BA90018B031 /* App */,
+				AE6A3BCE26CF4BAF0018B031 /* API */,
+				AE6A3BCF26CF4BB40018B031 /* 1. Time */,
 				CEC69DF326CE8E8000FFCB14 /* Assets.xcassets */,
-				CEC69DF526CE8E8000FFCB14 /* LaunchScreen.storyboard */,
-				CEC69DF826CE8E8000FFCB14 /* Info.plist */,
 			);
 			path = HustleReactorKit;
 			sourceTree = "<group>";
