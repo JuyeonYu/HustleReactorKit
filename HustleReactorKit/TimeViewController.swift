@@ -40,6 +40,11 @@ class TimeViewController: UIViewController, StoryboardView {
             .map { $0.time }
             .bind(to: time.rx.text)
             .disposed(by: disposeBag)
+        
+        reactor.state
+            .map { $0.hasTime }
+            .bind(to: nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 }
 

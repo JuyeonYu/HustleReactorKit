@@ -19,7 +19,9 @@ class TimeReactor: Reactor {
     }
     
     struct State {
-        var time: String = "몇 시 일까요?"
+        static let timePlaceHolder = "몇 시 일까요?"
+        var time: String = timePlaceHolder
+        var hasTime: Bool = false
     }
     
     let initialState: State = State()
@@ -33,14 +35,16 @@ class TimeReactor: Reactor {
                     .map { Mutation.setTime($0) }
             ])
         case .clear:
-            return Observable.just(Mutation.setTime("몇 시 일까요?"))
+            return Observable.just(Mutation.setTime(State.timePlaceHolder))
         }
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
-        case let .setTime(time): newState.time = time
+        case let .setTime(time):
+            newState.time = time
+            newState.hasTime = time != State.timePlaceHolder
         }
         return newState
     }
