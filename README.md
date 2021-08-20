@@ -13,6 +13,10 @@ ReactorKit으로 RxSwift와 놀아보기
 
 <img src = "https://user-images.githubusercontent.com/50232474/130107357-8edd3bc1-9bff-4b4e-be1e-ad7a2ddba29c.png" width = "30%" height = "30%">
 
+## 1.1.1 - 시간이 있을 때만 다음 버튼 활성화
+
+<img src = "https://user-images.githubusercontent.com/50232474/130166847-c2ec9b1b-9ad6-4580-aafa-ff127ede3535.png" width = "30%" height = "30%"> <img src = "https://user-images.githubusercontent.com/50232474/130166854-ec070216-b759-4c9d-b19e-4237a3cbc3ca.png" width = "30%" height = "30%">
+
 ---
 
 ## 버전1 회고
