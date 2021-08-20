@@ -1,5 +1,6 @@
-# HustleReactorKit
-ReactorKit으로 RxSwift와 놀아보기
+# 현재시간 보여주기
+
+사용 API: https://worldttimeapi.org/api/timezone/Asia/Seoul
 
 ## 1.0.0 - world time api를 호출해서 현재 시간을 화면에 보여준다.
 
