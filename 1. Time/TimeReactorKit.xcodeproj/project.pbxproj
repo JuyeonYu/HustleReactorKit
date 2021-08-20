@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		B2C52F697E842B3424EF8063 /* Pods-HustleReactorKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HustleReactorKit.debug.xcconfig"; path = "Target Support Files/Pods-HustleReactorKit/Pods-HustleReactorKit.debug.xcconfig"; sourceTree = "<group>"; };
-		CEC69DE726CE8E7D00FFCB14 /* HustleReactorKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HustleReactorKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC69DE726CE8E7D00FFCB14 /* TimeReactorKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeReactorKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC69DEA26CE8E7D00FFCB14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC69DEC26CE8E7D00FFCB14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CEC69DEE26CE8E7D00FFCB14 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		CEC69DDE26CE8E7D00FFCB14 = {
 			isa = PBXGroup;
 			children = (
-				CEC69DE926CE8E7D00FFCB14 /* HustleReactorKit */,
+				CEC69DE926CE8E7D00FFCB14 /* TimeReactorKit */,
 				CEC69DE826CE8E7D00FFCB14 /* Products */,
 				30419A5823BFE4FFB8E46071 /* Pods */,
 				2C9FBBA8847803B49876A0A0 /* Frameworks */,
@@ -100,12 +100,12 @@
 		CEC69DE826CE8E7D00FFCB14 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEC69DE726CE8E7D00FFCB14 /* HustleReactorKit.app */,
+				CEC69DE726CE8E7D00FFCB14 /* TimeReactorKit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CEC69DE926CE8E7D00FFCB14 /* HustleReactorKit */ = {
+		CEC69DE926CE8E7D00FFCB14 /* TimeReactorKit */ = {
 			isa = PBXGroup;
 			children = (
 				AE6A3BCD26CF4BA90018B031 /* App */,
@@ -116,15 +116,15 @@
 				CEC69DF826CE8E8000FFCB14 /* Info.plist */,
 				CEC69DF326CE8E8000FFCB14 /* Assets.xcassets */,
 			);
-			path = HustleReactorKit;
+			path = TimeReactorKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CEC69DE626CE8E7D00FFCB14 /* HustleReactorKit */ = {
+		CEC69DE626CE8E7D00FFCB14 /* TimeReactorKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEC69DFB26CE8E8000FFCB14 /* Build configuration list for PBXNativeTarget "HustleReactorKit" */;
+			buildConfigurationList = CEC69DFB26CE8E8000FFCB14 /* Build configuration list for PBXNativeTarget "TimeReactorKit" */;
 			buildPhases = (
 				AC557300967808E738CC6648 /* [CP] Check Pods Manifest.lock */,
 				CEC69DE326CE8E7D00FFCB14 /* Sources */,
@@ -136,9 +136,9 @@
 			);
 			dependencies = (
 			);
-			name = HustleReactorKit;
+			name = TimeReactorKit;
 			productName = HustleReactorKit;
-			productReference = CEC69DE726CE8E7D00FFCB14 /* HustleReactorKit.app */;
+			productReference = CEC69DE726CE8E7D00FFCB14 /* TimeReactorKit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -155,7 +155,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CEC69DE226CE8E7D00FFCB14 /* Build configuration list for PBXProject "HustleReactorKit" */;
+			buildConfigurationList = CEC69DE226CE8E7D00FFCB14 /* Build configuration list for PBXProject "TimeReactorKit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -168,7 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEC69DE626CE8E7D00FFCB14 /* HustleReactorKit */,
+				CEC69DE626CE8E7D00FFCB14 /* TimeReactorKit */,
 			);
 		};
 /* End PBXProject section */
@@ -389,12 +389,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DUV8UP2WXU;
-				INFOPLIST_FILE = HustleReactorKit/Info.plist;
+				INFOPLIST_FILE = TimeReactorKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.johnny.HustleReactorKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnny.TimeReactorKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -409,12 +409,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DUV8UP2WXU;
-				INFOPLIST_FILE = HustleReactorKit/Info.plist;
+				INFOPLIST_FILE = TimeReactorKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.johnny.HustleReactorKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnny.TimeReactorKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,7 +424,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CEC69DE226CE8E7D00FFCB14 /* Build configuration list for PBXProject "HustleReactorKit" */ = {
+		CEC69DE226CE8E7D00FFCB14 /* Build configuration list for PBXProject "TimeReactorKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEC69DF926CE8E8000FFCB14 /* Debug */,
@@ -433,7 +433,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEC69DFB26CE8E8000FFCB14 /* Build configuration list for PBXNativeTarget "HustleReactorKit" */ = {
+		CEC69DFB26CE8E8000FFCB14 /* Build configuration list for PBXNativeTarget "TimeReactorKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEC69DFC26CE8E8000FFCB14 /* Debug */,
