@@ -28,13 +28,19 @@ class UsersViewController: UIViewController, StoryboardView {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        tableView.rx.itemSelected
+            .bind(onNext: { indexPath in
+                let user = reactor.currentState.users[indexPath.row]
+                guard let viewController = self.storyboard?.instantiateViewController(identifier: "UserViewController") else { return }
+                self.present(viewController, animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
+
         reactor.state.map { $0.users }
             .bind(to: tableView.rx.items(cellIdentifier: "cell")) { indexPath, user, cell in
                 cell.textLabel?.text = user.name
             }
             .disposed(by: disposeBag)
     }
-
-
 }
 
