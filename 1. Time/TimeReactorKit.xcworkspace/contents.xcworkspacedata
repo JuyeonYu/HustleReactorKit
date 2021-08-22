@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:HustleReactorKit.xcodeproj">
+      location = "group:/Users/juyeon/Project/HustleReactorKit/1. Time/TimeReactorKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
