@@ -31,8 +31,24 @@ class UsersViewController: UIViewController, StoryboardView {
         tableView.rx.itemSelected
             .bind(onNext: { indexPath in
                 let user = reactor.currentState.users[indexPath.row]
-                guard let viewController = self.storyboard?.instantiateViewController(identifier: "UserViewController") else { return }
-                self.present(viewController, animated: true, completion: nil)
+                let alert = UIAlertController()
+                alert.addAction(UIAlertAction(title: "phone", style: .default, handler: { _ in
+                    if let url = URL(string: "tel://\(user.phone)") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: "e-mail", style: .default, handler: { _ in
+                    if let url = URL(string: "mailto://\(user.email)") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: "website", style: .default, handler: { _ in
+                    if let url = URL(string: "https://" + user.website) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
 
