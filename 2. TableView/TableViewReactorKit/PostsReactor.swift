@@ -37,5 +37,4 @@ class PostsReactor: Reactor {
         }
         return newState
     }
-    
 }
