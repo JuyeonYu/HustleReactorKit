@@ -15,6 +15,7 @@ class PostsViewController: UIViewController, StoryboardView {
     @IBOutlet weak var tableView: UITableView!
     
     var disposeBag: DisposeBag = DisposeBag()
+    private let userCache = NSCache<NSString, NSString>()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reactor = PostsReactor()
@@ -33,12 +34,17 @@ class PostsViewController: UIViewController, StoryboardView {
                 cell.title.text = post.title
                 cell.body.text = post.body
                 
-                APIManager.shared.readUser(id: post.userId)
-                    .asDriver(onErrorJustReturn: "")
-                    .drive { user in
-                        cell.user.text = user
-                    }
-                    .disposed(by: self.disposeBag)
+                if let user = self.userCache.object(forKey: "\(post.userId)" as NSString) {
+                    cell.user.text = user as String
+                } else {
+                    APIManager.shared.readUser(id: post.userId)
+                        .asDriver(onErrorJustReturn: "")
+                        .drive { user in
+                            cell.user.text = user
+                            self.userCache.setObject(user as NSString, forKey: "\(post.userId)" as NSString)
+                        }
+                        .disposed(by: cell.disposeBag)
+                }
             }
             .disposed(by: disposeBag)
     }
