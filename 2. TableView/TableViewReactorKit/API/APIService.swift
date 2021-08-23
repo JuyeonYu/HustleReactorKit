@@ -10,6 +10,7 @@ import Moya
 
 enum APIService {
     case users
+    case user(Int)
     case posts
 }
 
@@ -21,6 +22,7 @@ extension APIService: TargetType {
     var path: String {
         switch self {
         case .users: return "users"
+        case let .user(id): return "users/\(id)"
         case .posts: return "posts"
         }
     }

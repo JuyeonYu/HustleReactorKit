@@ -32,7 +32,13 @@ class PostsViewController: UIViewController, StoryboardView {
             .bind(to: tableView.rx.items(cellIdentifier: "PostTableViewCell", cellType: PostTableViewCell.self)) { index, post, cell in
                 cell.title.text = post.title
                 cell.body.text = post.body
-                cell.user.text = "\(post.userId)"
+                
+                APIManager.shared.readUser(id: post.userId)
+                    .asDriver(onErrorJustReturn: "")
+                    .drive { user in
+                        cell.user.text = user
+                    }
+                    .disposed(by: self.disposeBag)
             }
             .disposed(by: disposeBag)
     }
