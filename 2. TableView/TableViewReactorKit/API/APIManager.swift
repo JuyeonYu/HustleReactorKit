@@ -19,5 +19,10 @@ class APIManager {
             .map([UserModel].self)
             .asObservable()
     }
+    func readPosts() -> Observable<[PostModel]> {
+        return provider.rx.request(.posts)
+            .map([PostModel].self)
+            .asObservable()
+    }
 
 }

@@ -10,19 +10,18 @@ import Moya
 
 enum APIService {
     case users
+    case posts
 }
 
 extension APIService: TargetType {
     var baseURL: URL {
-        switch self {
-        case .users: return URL(string: "https://jsonplaceholder.typicode.com/")!
-        }
-
+        URL(string: "https://jsonplaceholder.typicode.com/")!
     }
     
     var path: String {
         switch self {
         case .users: return "users"
+        case .posts: return "posts"
         }
     }
     
