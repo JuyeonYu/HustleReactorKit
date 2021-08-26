@@ -11,10 +11,12 @@ import ReactorKit
 class UsersReactor: Reactor {
     enum Action {
         case readUsers
+        case onFilter(Int)
     }
     
     enum Mutation {
         case setUsers([UserModel])
+        case setFileter(Int)
     }
     
     struct State {
@@ -28,6 +30,8 @@ class UsersReactor: Reactor {
         case .readUsers:
             return APIManager.shared.readUsers()
                 .map { Mutation.setUsers($0) }
+        case .onFilter(let id):
+            return Observable.just(Mutation.setFileter(id))
         }
     }
     
@@ -35,6 +39,16 @@ class UsersReactor: Reactor {
         var newState = state
         switch mutation {
         case let .setUsers(users): newState.users = users
+        case .setFileter(let id):
+            if id == 1 {
+                newState.users = newState.users.filter {
+                    $0.name.count % 2 == 0
+                }
+            } else {
+                newState.users = newState.users.filter {
+                    $0.name.count % 3 == 0
+                }
+            }
         }
         return newState
     }
