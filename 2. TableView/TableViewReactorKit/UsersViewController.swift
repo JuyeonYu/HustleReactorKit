@@ -19,7 +19,9 @@ class UsersViewController: UIViewController, StoryboardView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reactor = UsersReactor()
+        tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: "UsersHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "UsersHeaderView")
     }
     
     func bind(reactor: UsersReactor) {
@@ -60,3 +62,19 @@ class UsersViewController: UIViewController, StoryboardView {
     }
 }
 
+extension UsersViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "UsersHeaderView") as! UsersHeaderView
+        header.onFilter = { isFilter1 in
+            if isFilter1 {
+                self.reactor?.action.onNext(.onFilter(1))
+            } else {
+                self.reactor?.action.onNext(.onFilter(2))
+            }
+        }
+        return header
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        130
+    }
+}

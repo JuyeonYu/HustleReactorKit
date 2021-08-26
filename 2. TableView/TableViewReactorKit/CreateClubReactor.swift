@@ -48,6 +48,7 @@ class CreateClubReactor: Reactor {
         switch action {
         case .inputName(let name):
             guard name.count > 3 else {
+                
                 return Observable.concat([
                     Observable.just(Mutation.setNameState(.invalid(.short))),
                     Observable.just(Mutation.setName(name))

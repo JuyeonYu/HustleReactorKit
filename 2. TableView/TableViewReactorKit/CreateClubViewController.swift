@@ -22,7 +22,7 @@ class CreateClubViewController: UIViewController, StoryboardView {
     override func viewDidLoad() {
         super.viewDidLoad()
         reactor = CreateClubReactor()
-        // Do any additional setup after loading the view.
+        
     }
     func bind(reactor: CreateClubReactor) {
         name.rx.text.orEmpty.skip(1).map {  Reactor.Action.inputName($0) }

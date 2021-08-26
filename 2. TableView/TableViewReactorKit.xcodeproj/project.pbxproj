@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		65EE03335F7730C39672F87B /* Pods_TableVIewReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DB8CF9557FAC37731ED00F /* Pods_TableVIewReactorKit.framework */; };
+		CE57F84A26D7DF1800D0A15C /* UsersHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57F84926D7DF1800D0A15C /* UsersHeaderView.swift */; };
+		CE57F84C26D7DF2400D0A15C /* UsersHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE57F84B26D7DF2400D0A15C /* UsersHeaderView.xib */; };
 		CEC69E3326CFE1A400FFCB14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3226CFE1A400FFCB14 /* AppDelegate.swift */; };
 		CEC69E3526CFE1A400FFCB14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3426CFE1A400FFCB14 /* SceneDelegate.swift */; };
 		CEC69E3726CFE1A400FFCB14 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3626CFE1A400FFCB14 /* UsersViewController.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		15DB8CF9557FAC37731ED00F /* Pods_TableVIewReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableVIewReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A165681685A885A94B8E37 /* Pods-TableVIewReactorKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableVIewReactorKit.release.xcconfig"; path = "Target Support Files/Pods-TableVIewReactorKit/Pods-TableVIewReactorKit.release.xcconfig"; sourceTree = "<group>"; };
+		CE57F84926D7DF1800D0A15C /* UsersHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersHeaderView.swift; sourceTree = "<group>"; };
+		CE57F84B26D7DF2400D0A15C /* UsersHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersHeaderView.xib; sourceTree = "<group>"; };
 		CEC69E2F26CFE1A400FFCB14 /* TableVIewReactorKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableVIewReactorKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC69E3226CFE1A400FFCB14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC69E3426CFE1A400FFCB14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				CEC69E4626CFE22900FFCB14 /* API */,
 				CEC69E3626CFE1A400FFCB14 /* UsersViewController.swift */,
 				CEC69E5926CFE6C900FFCB14 /* UsersReactor.swift */,
+				CE57F84926D7DF1800D0A15C /* UsersHeaderView.swift */,
+				CE57F84B26D7DF2400D0A15C /* UsersHeaderView.xib */,
 				CEFD7E6126D3DD2200584232 /* PostsViewController.swift */,
 				CEFD7E6526D3DE5C00584232 /* PostsReactor.swift */,
 				CEFD7E6726D3E07000584232 /* PostTableViewCell.swift */,
@@ -216,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE57F84C26D7DF2400D0A15C /* UsersHeaderView.xib in Resources */,
 				CEC69E3F26CFE1A600FFCB14 /* LaunchScreen.storyboard in Resources */,
 				CEC69E3C26CFE1A600FFCB14 /* Assets.xcassets in Resources */,
 				CEC69E3A26CFE1A400FFCB14 /* Main.storyboard in Resources */,
@@ -283,6 +290,7 @@
 				CEC69E5326CFE31A00FFCB14 /* AddressModel.swift in Sources */,
 				CEC69E5126CFE30000FFCB14 /* GeoModel.swift in Sources */,
 				CEFD7E6C26D549E600584232 /* CreateClubViewController.swift in Sources */,
+				CE57F84A26D7DF1800D0A15C /* UsersHeaderView.swift in Sources */,
 				CEFD7E6626D3DE5C00584232 /* PostsReactor.swift in Sources */,
 				CEFD7E6E26D54AAC00584232 /* CreateClubReactor.swift in Sources */,
 				CEC69E5A26CFE6C900FFCB14 /* UsersReactor.swift in Sources */,
