@@ -81,9 +81,9 @@ class CreateClubReactor: Reactor {
                 newState.separatorColor = .red
                 switch invalidType {
                 case .short:
-                    newState.helpMessage = "짧"
+                    newState.helpMessage = "3자 이상 입력해주세요"
                 case .long:
-                    newState.helpMessage = "길"
+                    newState.helpMessage = "최대 10자까지 가능합니다"
                 case .duplicated:
                     newState.helpMessage = "중"
                 }

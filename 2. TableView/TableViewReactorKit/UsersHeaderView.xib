@@ -25,14 +25,14 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQX-Cu-VNO">
                             <rect key="frame" x="0.0" y="0.0" width="191" height="45.5"/>
-                            <state key="normal" title="filter1"/>
+                            <state key="normal" title="1"/>
                             <connections>
                                 <action selector="onFilter1:" destination="iN0-l3-epB" eventType="touchUpInside" id="vRf-zf-p4u"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hws-KJ-Fly">
                             <rect key="frame" x="191" y="0.0" width="191" height="45.5"/>
-                            <state key="normal" title="f"/>
+                            <state key="normal" title="2"/>
                             <connections>
                                 <action selector="onFilter2:" destination="iN0-l3-epB" eventType="touchUpInside" id="FCO-rj-nIe"/>
                             </connections>
