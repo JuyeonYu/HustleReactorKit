@@ -23,3 +23,27 @@
 <img src = "https://user-images.githubusercontent.com/50232474/130998698-4a0a66d5-aea9-4030-aa0f-5347923ffb78.png" width = "30%" height = "30%"> <img src = "https://user-images.githubusercontent.com/50232474/130998888-f92e99fe-fded-42c0-ae6e-d0fea475d305.png" width = "30%" height = "30%"> <img src = "https://user-images.githubusercontent.com/50232474/130998897-e0dd3207-a96f-436d-82b3-1822799bb53d.png" width = "30%" height = "30%">
 
 2. 문자열 길이에 따라 유효성 체크
+
+---
+
+## 버전2 회고
+
+1. UITableView + RxSwift
+
+### 1. UITableView
+RxCocoa가 모든 걸 지원하지는 않았다. 
+정리하면 RxDatasource를 쓰면 되는 것과 뭘해도 안되는 것이 있다.
+
+RxDatasource 쓰면 되는 것
+1. 제목만 있는 기본 테이블 헤더뷰
+2. 여러 개의 섹션
+3. 여러 개의 셀 타입
+
+뭘해도 안되는 것
+1. 커스텀 테이블 헤더뷰
+
+---
+
+다음 써볼 것
+- RxDatasource
+- ReactorKit transform, global state
