@@ -31,7 +31,8 @@
 1. UITableView + RxSwift
 
 ### 1. UITableView
-RxCocoa가 모든 걸 지원하지는 않았다. 
+RxCocoa가 모든 걸 지원하지는 않았다.
+
 정리하면 RxDatasource를 쓰면 되는 것과 뭘해도 안되는 것이 있다.
 
 RxDatasource 쓰면 되는 것
@@ -41,6 +42,12 @@ RxDatasource 쓰면 되는 것
 
 뭘해도 안되는 것
 1. 커스텀 테이블 헤더뷰
+
+---
+
+tips
+- 테이블뷰 헤더뷰의 배경색을 바꿀 때 **contentView의 배경색**을 바꿔야 한다!
+- reactor.action.onNext로 rx 바인딩 없이 이벤트를 전달할 수 있다.
 
 ---
 
