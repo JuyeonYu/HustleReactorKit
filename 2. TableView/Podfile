@@ -11,5 +11,6 @@ target 'TableVIewReactorKit' do
   pod 'ReactorKit'
   pod 'RxViewController'
   pod 'Moya/RxSwift', '~> 14.0'
+  pod 'ReusableKit/RxSwift'
 
 end

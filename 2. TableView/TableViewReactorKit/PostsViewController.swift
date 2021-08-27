@@ -10,16 +10,24 @@ import RxSwift
 import RxCocoa
 import ReactorKit
 import RxViewController
+import ReusableKit
 
 class PostsViewController: UIViewController, StoryboardView {
     @IBOutlet weak var tableView: UITableView!
     
     var disposeBag: DisposeBag = DisposeBag()
     private let userCache = NSCache<NSString, NSString>()
+    
+    enum Reusable {
+        static let postCell = ReusableCell<PostTableViewCell>(nibName: "PostTableViewCell")
+        static let defaultCell = ReusableCell<UITableViewCell>()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reactor = PostsReactor()
-        tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
+        tableView.register(Reusable.postCell)
+        tableView.register(Reusable.defaultCell)
     }
     
     func bind(reactor: PostsReactor) {
@@ -30,7 +38,7 @@ class PostsViewController: UIViewController, StoryboardView {
         
         reactor.state
             .map { $0.posts }
-            .bind(to: tableView.rx.items(cellIdentifier: "PostTableViewCell", cellType: PostTableViewCell.self)) { index, post, cell in
+            .bind(to: tableView.rx.items(Reusable.postCell)) { _, post, cell in
                 cell.title.text = post.title
                 cell.body.text = post.body
                 
