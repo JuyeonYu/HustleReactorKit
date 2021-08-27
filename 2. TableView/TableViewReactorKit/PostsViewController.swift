@@ -38,20 +38,29 @@ class PostsViewController: UIViewController, StoryboardView {
         
         reactor.state
             .map { $0.posts }
-            .bind(to: tableView.rx.items(Reusable.postCell)) { _, post, cell in
-                cell.title.text = post.title
-                cell.body.text = post.body
-                
-                if let user = self.userCache.object(forKey: "\(post.userId)" as NSString) {
-                    cell.user.text = user as String
+            .bind(to: tableView.rx.items) { tableView, row, post in
+                if row % 5 == 0 {
+                    guard let cell = tableView.dequeue(Reusable.defaultCell) else { return UITableViewCell() }
+                    cell.textLabel?.text = "deleted"
+                    cell.textLabel?.textColor = .red
+                    return cell
                 } else {
-                    APIManager.shared.readUser(id: post.userId)
-                        .asDriver(onErrorJustReturn: "")
-                        .drive { user in
-                            cell.user.text = user
-                            self.userCache.setObject(user as NSString, forKey: "\(post.userId)" as NSString)
-                        }
-                        .disposed(by: cell.disposeBag)
+                    guard let cell = tableView.dequeue(Reusable.postCell) else { return UITableViewCell() }
+                    cell.title.text = post.title
+                    cell.body.text = post.body
+                    
+                    if let user = self.userCache.object(forKey: "\(post.userId)" as NSString) {
+                        cell.user.text = user as String
+                    } else {
+                        APIManager.shared.readUser(id: post.userId)
+                            .asDriver(onErrorJustReturn: "")
+                            .drive { user in
+                                cell.user.text = user
+                                self.userCache.setObject(user as NSString, forKey: "\(post.userId)" as NSString)
+                            }
+                            .disposed(by: cell.disposeBag)
+                    }
+                    return cell
                 }
             }
             .disposed(by: disposeBag)
