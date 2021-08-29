@@ -30,5 +30,10 @@ class APIManager {
             .map([PostModel].self)
             .asObservable()
     }
+    func readComments() -> Observable<[CommentModel]> {
+        return provider.rx.request(.comments)
+            .map([CommentModel].self)
+            .asObservable()
+    }
 
 }

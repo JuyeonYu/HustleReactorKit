@@ -11,6 +11,7 @@ import RxCocoa
 import ReactorKit
 import RxViewController
 import ReusableKit
+import RxDataSources
 
 class PostsViewController: UIViewController, StoryboardView {
     @IBOutlet weak var tableView: UITableView!
