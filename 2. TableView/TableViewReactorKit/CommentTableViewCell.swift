@@ -13,7 +13,6 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var mail: UILabel!
     
-    var disposeBag = DisposeBag()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

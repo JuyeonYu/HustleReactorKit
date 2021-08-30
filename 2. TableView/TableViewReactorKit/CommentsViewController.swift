@@ -14,20 +14,11 @@ import ReusableKit
 import RxDataSources
 
 
-
 class CommentsViewController: UIViewController, StoryboardView, UIScrollViewDelegate {
-    // MARK: - Property
-    
-    let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData>(configureCell: { dataSource, tableView, indexPath, item in
-        let cell = tableView.dequeue(Reusable.commentCell, for: indexPath)
-        cell.body.text = item.body
-        cell.name.text = item.name
-        cell.mail.text = item.email
-        return cell
-    })
     enum Reusable {
         static let commentCell = ReusableCell<CommentTableViewCell>(nibName: "CommentTableViewCell")
         static let defaultCell = ReusableCell<UITableViewCell>()
+        static let postCell = ReusableCell<PostTableViewCell>(nibName: "PostTableViewCell")
     }
     @IBOutlet weak var tableView: UITableView!
     var disposeBag: DisposeBag = DisposeBag()
@@ -37,7 +28,7 @@ class CommentsViewController: UIViewController, StoryboardView, UIScrollViewDele
         self.reactor = CommentReactor()
         tableView.register(Reusable.commentCell)
         tableView.register(Reusable.defaultCell)
-        
+        tableView.register(Reusable.postCell)
         
     }
     
@@ -47,12 +38,9 @@ class CommentsViewController: UIViewController, StoryboardView, UIScrollViewDele
             .map { _ in Reactor.Action.readComments }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        dataSource.titleForHeaderInSection = { dataSource, index in
-            return dataSource.sectionModels[index].header
-        }
         reactor.state
             .map { $0.sections }
-            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .bind(to: tableView.rx.items(dataSource: CommentsViewController.dataSource()))
             .disposed(by: disposeBag)
     }
 }
@@ -60,5 +48,31 @@ class CommentsViewController: UIViewController, StoryboardView, UIScrollViewDele
 extension CommentsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
+    }
+}
+
+extension CommentsViewController {
+    static func dataSource() -> RxTableViewSectionedReloadDataSource<MultipleSectionModel> {
+        return RxTableViewSectionedReloadDataSource<MultipleSectionModel>(
+            configureCell: { dataSource, table, idxPath, _ in
+                switch dataSource[idxPath] {
+                case .CommentSectionItem(let item):
+                    let cell = table.dequeue(Reusable.commentCell)!
+                    cell.body.text = item.body
+                    cell.name.text = item.name
+                    cell.mail.text = item.email
+                    return cell
+                case .PostSectionItem(let post):
+                    let cell = table.dequeue(Reusable.postCell)!
+                    cell.title.text = post.title
+                    cell.body.text = post.body
+                    return cell
+                }
+            },
+            titleForHeaderInSection: { dataSource, index in
+                let section = dataSource[index]
+                return section.title
+            }
+        )
     }
 }

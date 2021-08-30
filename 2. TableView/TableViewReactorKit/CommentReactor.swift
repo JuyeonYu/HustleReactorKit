@@ -13,26 +13,39 @@ class CommentReactor: Reactor {
          case readComments
     }
     enum Mutation {
-        case setComments([SectionOfCustomData])
+        case setComments([CommentModel])
+        case setPosts([PostModel])
     }
     struct State {
         var comments: [CommentModel] = []
         var posts: [PostModel] = []
-        var sections: [SectionOfCustomData] = []
+        var sections: [MultipleSectionModel] = []
     }
     var initialState: State = State()
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .readComments:
-            return APIManager.shared.readComments()
-                .map { Mutation.setComments([SectionOfCustomData(header: "reply", items: $0)]) }
+            return Observable.concat([
+                APIManager.shared.readComments()
+                    .map { Mutation.setComments($0) },
+                APIManager.shared.readPosts()
+                    .map { Mutation.setPosts($0)}
+            ])
         }
     }
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
-        case .setComments(let comments): newState.sections = comments
+        case .setComments(let comments):
+            newState.sections.append(
+                .CommentSection(title: "comments",
+                                items: comments.map { SectionItem.CommentSectionItem($0) }
+                ))
+        case .setPosts(let posts):
+            newState.sections.append(
+                .PostSection(title: "posts",
+                             items: posts.map { SectionItem.PostSectionItem($0) }))
         }
         return newState
     }
