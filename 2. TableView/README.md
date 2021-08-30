@@ -24,24 +24,42 @@
 
 2. 문자열 길이에 따라 유효성 체크
 
+## 2.3.0
+
+<img src = "https://user-images.githubusercontent.com/50232474/131358782-567d541b-71da-4354-9e01-3594d80e9090.png" width = "30%" height = "30%">
+
+1. RxDataSources를 이용한 멀티섹션, 헤더뷰
+2. ReusableKit 사용해서 cell을 regist / deque
 ---
 
 ## 버전2 회고
 
-1. UITableView + RxSwift
-
-### 1. UITableView
+### 1. UITableView +RxCocoa
 RxCocoa가 모든 걸 지원하지는 않았다.
 
-정리하면 RxDatasource를 쓰면 되는 것과 뭘해도 안되는 것이 있다.
+UITableViewDatasource에서 구현되는 기능 (섹션, 헤더 타이틀, 푸터 타이틀, 편집, 이동)을 
 
-RxDatasource 쓰면 되는 것
-1. 제목만 있는 기본 테이블 헤더뷰
-2. 여러 개의 섹션
-3. 여러 개의 셀 타입
+rx로 이용하려면 RxDataSources를 이용해야 했다.
 
-뭘해도 안되는 것
-1. 커스텀 테이블 헤더뷰
+하지만 RxDataSources를 사용한다고 해도 모든 dataSource를 지원하는 것도 아니다.
+
+내가 자주쓰는 것 중 지원하지 않는 것은 viewForHeaderInSection였다.
+
+### 2. RxDatasources
+섹션을 구분하기 위한 보일러 플레이트 코드가 생각보다 많이 들어간다.
+
+예제를 따라치며 어찌어찌 구현은 했는데 제대로 이해햐지는 못했다.
+
+자주 보고 쓰며 익숙해지는 수밖에 없을 것 같다.
+
+> 큰 골자는 나뉠 섹션을 정의하고 각 섹션에 어떤 데이터가 들어갈지 정의한다는 것이다.
+
+### 3. ReusableKit (수열님 감사합니다...)
+RxDataSources 예제를 보다가 우연히 발견한 라이브러리다.
+
+cell을 regist하고 deque할 때 하드코딩된 문자열을 쓰거나 강제 옵셔널 언래핑을 하는 경우가 방지된다.
+
+사용법도 간단하고 직관적이어서 당장 실무에서 적용하기 좋을 것 같다.
 
 ---
 
@@ -52,5 +70,4 @@ tips
 ---
 
 다음 써볼 것
-- RxDatasource
 - ReactorKit transform, global state
