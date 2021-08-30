@@ -10,18 +10,24 @@ import RxSwift
 import RxCocoa
 import ReactorKit
 import RxViewController
+import ReusableKit
 
 class UsersViewController: UIViewController, StoryboardView {
     @IBOutlet weak var tableView: UITableView!
     
     var disposeBag: DisposeBag = DisposeBag()
     
+    enum Reusable {
+        static let defaultCell = ReusableCell<UITableViewCell>()
+        static let userHeader = ReusableView<UsersHeaderView>(nibName: "UsersHeaderView")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reactor = UsersReactor()
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.register(UINib(nibName: "UsersHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "UsersHeaderView")
+        tableView.register(Reusable.defaultCell)
+        tableView.register(Reusable.userHeader)
     }
     
     func bind(reactor: UsersReactor) {
@@ -55,7 +61,7 @@ class UsersViewController: UIViewController, StoryboardView {
             .disposed(by: disposeBag)
 
         reactor.state.map { $0.users }
-            .bind(to: tableView.rx.items(cellIdentifier: "cell")) { indexPath, user, cell in
+            .bind(to: tableView.rx.items(Reusable.defaultCell)) { indexPath, user, cell in
                 cell.textLabel?.text = user.name
             }
             .disposed(by: disposeBag)
@@ -64,8 +70,8 @@ class UsersViewController: UIViewController, StoryboardView {
 
 extension UsersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "UsersHeaderView") as! UsersHeaderView
-        header.onFilter = { isFilter1 in
+        let header = tableView.dequeue(Reusable.userHeader)
+        header?.onFilter = { isFilter1 in
             if isFilter1 {
                 self.reactor?.action.onNext(.onFilter(1))
             } else {
