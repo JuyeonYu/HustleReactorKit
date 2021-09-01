@@ -22,7 +22,13 @@ class CreateClubViewController: UIViewController, StoryboardView {
     override func viewDidLoad() {
         super.viewDidLoad()
         reactor = CreateClubReactor()
-        
+        goNext.rx.tap
+            .asDriver()
+            .drive(onNext: {
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "EditClubViewController")
+                self.present(viewController, animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
     func bind(reactor: CreateClubReactor) {
         name.rx.text.orEmpty.skip(1).map {  Reactor.Action.inputName($0) }

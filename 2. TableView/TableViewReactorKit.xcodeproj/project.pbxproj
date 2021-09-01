@@ -16,6 +16,8 @@
 		CEA848B026DBB99C0044685B /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA848AE26DBB99C0044685B /* CommentTableViewCell.xib */; };
 		CEA848B226DBBAE20044685B /* CommentReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA848B126DBBAE20044685B /* CommentReactor.swift */; };
 		CEA848B426DBBF980044685B /* SectionOfCustomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA848B326DBBF980044685B /* SectionOfCustomData.swift */; };
+		CEA848B826DFBEB90044685B /* EditClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA848B726DFBEB90044685B /* EditClubViewController.swift */; };
+		CEA848BA26DFC41B0044685B /* EditClubReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA848B926DFC41B0044685B /* EditClubReactor.swift */; };
 		CEC69E3326CFE1A400FFCB14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3226CFE1A400FFCB14 /* AppDelegate.swift */; };
 		CEC69E3526CFE1A400FFCB14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3426CFE1A400FFCB14 /* SceneDelegate.swift */; };
 		CEC69E3726CFE1A400FFCB14 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3626CFE1A400FFCB14 /* UsersViewController.swift */; };
@@ -49,6 +51,8 @@
 		CEA848AE26DBB99C0044685B /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		CEA848B126DBBAE20044685B /* CommentReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentReactor.swift; sourceTree = "<group>"; };
 		CEA848B326DBBF980044685B /* SectionOfCustomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfCustomData.swift; sourceTree = "<group>"; };
+		CEA848B726DFBEB90044685B /* EditClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClubViewController.swift; sourceTree = "<group>"; };
+		CEA848B926DFC41B0044685B /* EditClubReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClubReactor.swift; sourceTree = "<group>"; };
 		CEC69E2F26CFE1A400FFCB14 /* TableVIewReactorKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableVIewReactorKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC69E3226CFE1A400FFCB14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC69E3426CFE1A400FFCB14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				CEFD7E6826D3E07000584232 /* PostTableViewCell.xib */,
 				CEFD7E6B26D549E600584232 /* CreateClubViewController.swift */,
 				CEFD7E6D26D54AAC00584232 /* CreateClubReactor.swift */,
+				CEA848B726DFBEB90044685B /* EditClubViewController.swift */,
+				CEA848B926DFC41B0044685B /* EditClubReactor.swift */,
 				CEA848AB26DBB9230044685B /* CommentsViewController.swift */,
 				CEA848B126DBBAE20044685B /* CommentReactor.swift */,
 				CEA848AD26DBB99C0044685B /* CommentTableViewCell.swift */,
@@ -303,12 +309,14 @@
 				CEC69E3326CFE1A400FFCB14 /* AppDelegate.swift in Sources */,
 				CEC69E4A26CFE22900FFCB14 /* APIManager.swift in Sources */,
 				CEA848B226DBBAE20044685B /* CommentReactor.swift in Sources */,
+				CEA848B826DFBEB90044685B /* EditClubViewController.swift in Sources */,
 				CEC69E4F26CFE2F000FFCB14 /* CompanyModel.swift in Sources */,
 				CEC69E4926CFE22900FFCB14 /* APIService.swift in Sources */,
 				CEFD7E6226D3DD2200584232 /* PostsViewController.swift in Sources */,
 				CEA848AF26DBB99C0044685B /* CommentTableViewCell.swift in Sources */,
 				CEA848AC26DBB9230044685B /* CommentsViewController.swift in Sources */,
 				CEA848AA26DBB8660044685B /* CommentModel.swift in Sources */,
+				CEA848BA26DFC41B0044685B /* EditClubReactor.swift in Sources */,
 				CEFD7E6926D3E07000584232 /* PostTableViewCell.swift in Sources */,
 				CEC69E5326CFE31A00FFCB14 /* AddressModel.swift in Sources */,
 				CEC69E5126CFE30000FFCB14 /* GeoModel.swift in Sources */,

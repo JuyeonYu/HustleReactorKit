@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -136,6 +137,43 @@
             </objects>
             <point key="canvasLocation" x="1152.1739130434783" y="1060.7142857142858"/>
         </scene>
+        <!--Edit Club View Controller-->
+        <scene sceneID="Cbh-nU-nQx">
+            <objects>
+                <viewController storyboardIdentifier="EditClubViewController" id="ru0-c3-eDE" customClass="EditClubViewController" customModule="TableVIewReactorKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hiU-tH-9qU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zK-AB-wul">
+                                <rect key="frame" x="16" y="319" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cc-2v-JfB">
+                                <rect key="frame" x="16" y="545" width="382" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="수정">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y1W-NB-4tC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0cc-2v-JfB" firstAttribute="centerY" secondItem="hiU-tH-9qU" secondAttribute="centerY" multiplier="1.25" id="6MP-fs-MsL"/>
+                            <constraint firstItem="y1W-NB-4tC" firstAttribute="trailing" secondItem="8zK-AB-wul" secondAttribute="trailing" constant="16" id="EkT-5B-v7Z"/>
+                            <constraint firstItem="y1W-NB-4tC" firstAttribute="trailing" secondItem="0cc-2v-JfB" secondAttribute="trailing" constant="16" id="bo0-Ao-HPi"/>
+                            <constraint firstItem="8zK-AB-wul" firstAttribute="leading" secondItem="y1W-NB-4tC" secondAttribute="leading" constant="16" id="nXM-hr-Bxe"/>
+                            <constraint firstItem="8zK-AB-wul" firstAttribute="centerY" secondItem="hiU-tH-9qU" secondAttribute="centerY" multiplier="0.75" id="peL-Px-CKB"/>
+                            <constraint firstItem="0cc-2v-JfB" firstAttribute="leading" secondItem="y1W-NB-4tC" secondAttribute="leading" constant="16" id="tuI-fA-mAY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZk-CB-D4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1151" y="1732"/>
+        </scene>
         <!--posts-->
         <scene sceneID="94N-96-Xoq">
             <objects>
@@ -210,6 +248,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
