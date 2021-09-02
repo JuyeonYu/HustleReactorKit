@@ -32,12 +32,10 @@ class CreateClubViewController: UIViewController, StoryboardView {
     }
     func bind(reactor: CreateClubReactor) {
         name.rx.text.orEmpty.skip(1)
-//            .map {  Reactor.Action.inputName($0) }
-//            .bind(to: reactor.action)
-            .subscribe(onNext: {
-                UserInfo.name.onNext($0)
-            })
+            .map {  Reactor.Action.inputName($0) }
+            .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
         reactor.state.map { $0.helpMessage }
             .debug()
             .bind(to: help.rx.text)
@@ -57,14 +55,9 @@ class CreateClubViewController: UIViewController, StoryboardView {
         reactor.state.map { $0.name }
             .bind(to: name.rx.text)
             .disposed(by: disposeBag)
-//        reactor.state.map { $0.nameState == .valid }
-//            .debug()
-//            .bind(to: goNext.rx.isEnabled)
-//            .disposed(by: disposeBag)
-        
-//        UserInfo.name
-//            .subscribe { print("x-> \($0)")
-//        }
-//            .disposed(by: disposeBag)
+        reactor.state.map { $0.nameState == .valid }
+            .debug()
+            .bind(to: goNext.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 }

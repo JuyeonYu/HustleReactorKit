@@ -14,7 +14,6 @@ class EditClubReactor: Reactor {
     }
     enum Mutation {
         case set(name: String)
-        case edit(name: String)
     }
     struct State {
         var name = ""
@@ -24,20 +23,21 @@ class EditClubReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .edit(name: let name):
-            return Observable.just(Mutation.edit(name: name))
+            UserInfo.name.onNext(name)
+            return .just(.set(name: name))
         }
     }
+    
+    func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
+        return Observable.merge(mutation, UserInfo.name.map { Mutation.set(name: $0) })
+    }
+    
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
-        case let .set(name: name):
+        case .set(name: let name):
             newState.name = name
-        case let .edit(name: name):
-            UserInfo.name.onNext(name)
         }
         return newState
-    }
-    func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
-        return Observable.merge(mutation, UserInfo.name.map { Mutation.set(name: $0) })
     }
 }
