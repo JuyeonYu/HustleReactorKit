@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RxSwift
+
 struct UserModel: Codable {
     let id: Int
     let name: String
@@ -15,4 +17,8 @@ struct UserModel: Codable {
     let phone: String
     let website: String
     let company: CompanyModel
+}
+
+class UserInfo {
+    static var name = BehaviorSubject<String>(value: "")
 }

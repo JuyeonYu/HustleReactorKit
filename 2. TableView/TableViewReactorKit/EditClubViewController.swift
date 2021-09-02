@@ -6,24 +6,31 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import ReactorKit
+import RxViewController
 
-class EditClubViewController: UIViewController {
 
+class EditClubViewController: UIViewController, StoryboardView {
+    @IBOutlet weak var club: UITextField!
+    @IBOutlet weak var edit: UIButton!
+    var disposeBag: DisposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        reactor = EditClubReactor()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func bind(reactor: EditClubReactor) {
+        edit.rx.tap
+            .subscribe(onNext: { [weak self] in
+                UserInfo.name.onNext((self?.club.text!)!)
+                self?.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
+        reactor.state
+            .map { $0.name }
+            .bind(to: club.rx.text)
+            .disposed(by: disposeBag)
     }
-    */
-
 }

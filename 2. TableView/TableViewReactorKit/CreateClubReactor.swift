@@ -13,6 +13,7 @@ class CreateClubReactor: Reactor {
         case inputName(String)
     }
     enum Mutation {
+        case saveName(String)
         case setName(String)
         case setNameState(NameState)
     }
@@ -43,7 +44,7 @@ class CreateClubReactor: Reactor {
     }
     
     var initialState: State = State()
-    
+        
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .inputName(let name):
@@ -51,18 +52,18 @@ class CreateClubReactor: Reactor {
                 
                 return Observable.concat([
                     Observable.just(Mutation.setNameState(.invalid(.short))),
-                    Observable.just(Mutation.setName(name))
+                    Observable.just(Mutation.saveName(name))
                 ])
             }
             guard name.count < 11 else {
                 return Observable.concat([
                     Observable.just(Mutation.setNameState(.invalid(.long))),
-                    Observable.just(Mutation.setName(name))
+                    Observable.just(Mutation.saveName(name))
                 ])
             }
             return Observable.concat([
                 Observable.just(Mutation.setNameState(.valid)),
-                Observable.just(Mutation.setName(name))
+                Observable.just(Mutation.saveName(name))
             ])
         }
     }
@@ -88,7 +89,12 @@ class CreateClubReactor: Reactor {
                     newState.helpMessage = "중"
                 }
             }
+        case .saveName(let name):
+            UserInfo.name.onNext(name)
         }
         return newState
+    }
+    func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
+        return Observable.merge(mutation, UserInfo.name.map { Mutation.setName($0)})
     }
 }

@@ -169,6 +169,10 @@
                             <constraint firstItem="0cc-2v-JfB" firstAttribute="leading" secondItem="y1W-NB-4tC" secondAttribute="leading" constant="16" id="tuI-fA-mAY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="club" destination="8zK-AB-wul" id="Bt3-V6-vEv"/>
+                        <outlet property="edit" destination="0cc-2v-JfB" id="gQv-lC-s9j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZk-CB-D4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

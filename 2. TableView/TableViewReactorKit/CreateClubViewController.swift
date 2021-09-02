@@ -31,8 +31,12 @@ class CreateClubViewController: UIViewController, StoryboardView {
             .disposed(by: disposeBag)
     }
     func bind(reactor: CreateClubReactor) {
-        name.rx.text.orEmpty.skip(1).map {  Reactor.Action.inputName($0) }
-            .bind(to: reactor.action)
+        name.rx.text.orEmpty.skip(1)
+//            .map {  Reactor.Action.inputName($0) }
+//            .bind(to: reactor.action)
+            .subscribe(onNext: {
+                UserInfo.name.onNext($0)
+            })
             .disposed(by: disposeBag)
         reactor.state.map { $0.helpMessage }
             .debug()
@@ -50,21 +54,17 @@ class CreateClubViewController: UIViewController, StoryboardView {
             .debug()
             .bind(to: placeHolder.rx.isHidden)
             .disposed(by: disposeBag)
-        reactor.state.map { $0.nameState == .valid }
-            .debug()
-            .bind(to: goNext.rx.isEnabled)
+        reactor.state.map { $0.name }
+            .bind(to: name.rx.text)
             .disposed(by: disposeBag)
+//        reactor.state.map { $0.nameState == .valid }
+//            .debug()
+//            .bind(to: goNext.rx.isEnabled)
+//            .disposed(by: disposeBag)
+        
+//        UserInfo.name
+//            .subscribe { print("x-> \($0)")
+//        }
+//            .disposed(by: disposeBag)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
