@@ -61,6 +61,23 @@ cell을 regist하고 deque할 때 하드코딩된 문자열을 쓰거나 강제 
 
 사용법도 간단하고 직관적이어서 당장 실무에서 적용하기 좋을 것 같다.
 
+### 4. 전역변수와 transform
+오픈톡방에 물어봤다가 알게된 내용을 정리합니다. (403님, 현진님 정말 감사합니다!)
+
+뷰에서 리액터로 액션을 전달하면 리액터에서는 다음과 같은 일련의 과정을 거친다.
+
+#### action -> mutate(side effect) ->  transform(디버그 및 전역 변수와 결합) -> reduce (상태 변경)
+
+처음에 이런 과정을 모르고 전역변수(subject)를 reduce에서 onNext했다가 Simultaneous accesses에러로 앱이 죽었다.
+
+이제 이유를 알겠다!
+
+reduce에서 전역변수에 onNext를 하면 전역 변수를 지켜보고 있는 transform이 다시 호출된다.
+
+그럼 위 흐름에 따라 reduce가 호출되고 또 전역 변수에 onNext ....
+
+transform <-> reduce가 무한히 호출되기에 앱이 죽는 것이었다.
+
 ---
 
 tips
