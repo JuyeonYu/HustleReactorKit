@@ -13,11 +13,9 @@ import RxViewController
 import ReusableKit
 import RxDataSources
 
-
 class CommentsViewController: UIViewController, StoryboardView, UIScrollViewDelegate {
     enum Reusable {
         static let commentCell = ReusableCell<CommentTableViewCell>(nibName: "CommentTableViewCell")
-        static let defaultCell = ReusableCell<UITableViewCell>()
         static let postCell = ReusableCell<PostTableViewCell>(nibName: "PostTableViewCell")
     }
     @IBOutlet weak var tableView: UITableView!
@@ -27,9 +25,7 @@ class CommentsViewController: UIViewController, StoryboardView, UIScrollViewDele
         super.viewDidLoad()
         self.reactor = CommentReactor()
         tableView.register(Reusable.commentCell)
-        tableView.register(Reusable.defaultCell)
         tableView.register(Reusable.postCell)
-        
     }
     
     func bind(reactor: CommentReactor) {

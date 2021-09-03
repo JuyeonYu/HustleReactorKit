@@ -11,7 +11,6 @@ import RxCocoa
 import ReactorKit
 import RxViewController
 
-
 class EditClubViewController: UIViewController, StoryboardView {
     @IBOutlet weak var club: UITextField!
     @IBOutlet weak var edit: UIButton!

@@ -37,26 +37,21 @@ class CreateClubViewController: UIViewController, StoryboardView {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.helpMessage }
-            .debug()
             .bind(to: help.rx.text)
             .disposed(by: disposeBag)
         reactor.state.map { $0.helpMessage.isEmpty }
-            .debug()
             .bind(to: help.rx.isHidden)
             .disposed(by: disposeBag)
         reactor.state.map { $0.separatorColor }
-            .debug()
             .bind(to: separator.rx.backgroundColor)
             .disposed(by: disposeBag)
         reactor.state.map { !$0.name.isEmpty }
-            .debug()
             .bind(to: placeHolder.rx.isHidden)
             .disposed(by: disposeBag)
         reactor.state.map { $0.name }
             .bind(to: name.rx.text)
             .disposed(by: disposeBag)
         reactor.state.map { $0.nameState == .valid }
-            .debug()
             .bind(to: goNext.rx.isEnabled)
             .disposed(by: disposeBag)
     }

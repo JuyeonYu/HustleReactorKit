@@ -107,6 +107,51 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CEA848BB26E296490044685B /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				CEC69E3626CFE1A400FFCB14 /* UsersViewController.swift */,
+				CEC69E5926CFE6C900FFCB14 /* UsersReactor.swift */,
+				CE57F84926D7DF1800D0A15C /* UsersHeaderView.swift */,
+				CE57F84B26D7DF2400D0A15C /* UsersHeaderView.xib */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		CEA848BC26E296580044685B /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD7E6126D3DD2200584232 /* PostsViewController.swift */,
+				CEFD7E6526D3DE5C00584232 /* PostsReactor.swift */,
+				CEFD7E6726D3E07000584232 /* PostTableViewCell.swift */,
+				CEFD7E6826D3E07000584232 /* PostTableViewCell.xib */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		CEA848BD26E296700044685B /* Club */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD7E6B26D549E600584232 /* CreateClubViewController.swift */,
+				CEFD7E6D26D54AAC00584232 /* CreateClubReactor.swift */,
+				CEA848B726DFBEB90044685B /* EditClubViewController.swift */,
+				CEA848B926DFC41B0044685B /* EditClubReactor.swift */,
+			);
+			path = Club;
+			sourceTree = "<group>";
+		};
+		CEA848BE26E2967E0044685B /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				CEA848AB26DBB9230044685B /* CommentsViewController.swift */,
+				CEA848B126DBBAE20044685B /* CommentReactor.swift */,
+				CEA848AD26DBB99C0044685B /* CommentTableViewCell.swift */,
+				CEA848AE26DBB99C0044685B /* CommentTableViewCell.xib */,
+				CEA848B326DBBF980044685B /* SectionOfCustomData.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
 		CEC69E2626CFE1A400FFCB14 = {
 			isa = PBXGroup;
 			children = (
@@ -130,23 +175,10 @@
 			children = (
 				CEC69E4B26CFE2AB00FFCB14 /* App */,
 				CEC69E4626CFE22900FFCB14 /* API */,
-				CEC69E3626CFE1A400FFCB14 /* UsersViewController.swift */,
-				CEC69E5926CFE6C900FFCB14 /* UsersReactor.swift */,
-				CE57F84926D7DF1800D0A15C /* UsersHeaderView.swift */,
-				CE57F84B26D7DF2400D0A15C /* UsersHeaderView.xib */,
-				CEFD7E6126D3DD2200584232 /* PostsViewController.swift */,
-				CEFD7E6526D3DE5C00584232 /* PostsReactor.swift */,
-				CEFD7E6726D3E07000584232 /* PostTableViewCell.swift */,
-				CEFD7E6826D3E07000584232 /* PostTableViewCell.xib */,
-				CEFD7E6B26D549E600584232 /* CreateClubViewController.swift */,
-				CEFD7E6D26D54AAC00584232 /* CreateClubReactor.swift */,
-				CEA848B726DFBEB90044685B /* EditClubViewController.swift */,
-				CEA848B926DFC41B0044685B /* EditClubReactor.swift */,
-				CEA848AB26DBB9230044685B /* CommentsViewController.swift */,
-				CEA848B126DBBAE20044685B /* CommentReactor.swift */,
-				CEA848AD26DBB99C0044685B /* CommentTableViewCell.swift */,
-				CEA848AE26DBB99C0044685B /* CommentTableViewCell.xib */,
-				CEA848B326DBBF980044685B /* SectionOfCustomData.swift */,
+				CEA848BB26E296490044685B /* Users */,
+				CEA848BC26E296580044685B /* Posts */,
+				CEA848BD26E296700044685B /* Club */,
+				CEA848BE26E2967E0044685B /* Comments */,
 				CEC69E5426CFE34100FFCB14 /* Models */,
 				CEC69E3B26CFE1A600FFCB14 /* Assets.xcassets */,
 				CEC69E4026CFE1A600FFCB14 /* Info.plist */,

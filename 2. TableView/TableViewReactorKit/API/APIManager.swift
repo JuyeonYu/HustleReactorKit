@@ -35,5 +35,4 @@ class APIManager {
             .map([CommentModel].self)
             .asObservable()
     }
-
 }
