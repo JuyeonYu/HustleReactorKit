@@ -11,7 +11,6 @@ import RxCocoa
 import ReactorKit
 import RxViewController
 import ReusableKit
-//import RxDataSources
 
 class PostsViewController: UIViewController, StoryboardView {
     @IBOutlet weak var tableView: UITableView!
@@ -39,10 +38,9 @@ class PostsViewController: UIViewController, StoryboardView {
         tableView.rx.prefetchRows
             .distinctUntilChanged()
             .filter { indexPaths in
-                for indexPath in indexPaths {
-                    if indexPath.row == reactor.currentState.posts.count - 1 {
-                        return true
-                    }
+                for indexPath in indexPaths
+                where indexPath.row == reactor.currentState.posts.count - 1 {
+                    return true
                 }
                 return false
             }
