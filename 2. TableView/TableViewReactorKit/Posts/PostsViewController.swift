@@ -11,7 +11,7 @@ import RxCocoa
 import ReactorKit
 import RxViewController
 import ReusableKit
-import RxDataSources
+//import RxDataSources
 
 class PostsViewController: UIViewController, StoryboardView {
     @IBOutlet weak var tableView: UITableView!
@@ -36,7 +36,20 @@ class PostsViewController: UIViewController, StoryboardView {
             .map { _ in Reactor.Action.readPosts }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
+        tableView.rx.prefetchRows
+            .distinctUntilChanged()
+            .filter { indexPaths in
+                for indexPath in indexPaths {
+                    if indexPath.row == reactor.currentState.posts.count - 1 {
+                        return true
+                    }
+                }
+                return false
+            }
+            .map { _ in Reactor.Action.loadMore}
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+                        
         reactor.state
             .map { $0.posts }
             .bind(to: tableView.rx.items) { tableView, row, post in

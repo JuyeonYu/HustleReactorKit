@@ -10,6 +10,7 @@ import ReactorKit
 
 class PostsReactor: Reactor {
     enum Action {
+        case loadMore
         case readPosts
         case obBookmark(Int)
     }
@@ -17,10 +18,12 @@ class PostsReactor: Reactor {
     enum Mutation {
         case setPosts([PostModel])
         case setBookmark(Int)
+        case setPage(Int)
     }
     
     struct State {
         var posts: [PostModel] = []
+        var page = 0
     }
     
     var initialState: State = State()
@@ -31,6 +34,7 @@ class PostsReactor: Reactor {
             .map { Mutation.setPosts($0) }
         case .obBookmark(let row):
             return Observable.just(Mutation.setBookmark(row))
+        case .loadMore: return Observable.just(Mutation.setPage(currentState.page + 1))
         }
     }
     
@@ -39,6 +43,7 @@ class PostsReactor: Reactor {
         switch mutation {
         case let .setPosts(posts): newState.posts = posts
         case let .setBookmark(row): newState.posts[row].bookmark = !(currentState.posts[row].bookmark ?? false)
+        case let .setPage(page): newState.page = page
         }
         return newState
     }
