@@ -34,6 +34,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4a-ng-84O">
+                        <rect key="frame" x="286.5" y="83" width="17.5" height="22"/>
+                        <state key="normal" image="bookmark" catalog="system"/>
+                        <state key="selected" image="bookmark.fill" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="VBM-LX-szY" secondAttribute="trailing" constant="16" id="3N4-Er-jcU"/>
@@ -44,17 +49,24 @@
                     <constraint firstAttribute="bottom" secondItem="HrX-UB-P3u" secondAttribute="bottom" constant="16" id="Mxl-ts-9hq"/>
                     <constraint firstItem="vqy-Qa-wtY" firstAttribute="top" secondItem="VBM-LX-szY" secondAttribute="bottom" constant="16" id="Pe9-mt-xsg"/>
                     <constraint firstAttribute="trailing" secondItem="vqy-Qa-wtY" secondAttribute="trailing" constant="16" id="RIn-9W-h6b"/>
+                    <constraint firstAttribute="trailing" secondItem="f4a-ng-84O" secondAttribute="trailing" constant="16" id="TA1-A5-WlW"/>
                     <constraint firstItem="VBM-LX-szY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="UND-9s-S9W"/>
                     <constraint firstItem="vqy-Qa-wtY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ZoY-uj-KZC"/>
+                    <constraint firstItem="f4a-ng-84O" firstAttribute="centerY" secondItem="HrX-UB-P3u" secondAttribute="centerY" id="typ-G1-HDB"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="body" destination="vqy-Qa-wtY" id="sDk-i7-k5i"/>
+                <outlet property="bookmark" destination="f4a-ng-84O" id="kIN-b0-Sl4"/>
                 <outlet property="title" destination="VBM-LX-szY" id="2Z9-BB-tCv"/>
                 <outlet property="user" destination="HrX-UB-P3u" id="ppg-xx-fGu"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="bookmark" catalog="system" width="112" height="128"/>
+        <image name="bookmark.fill" catalog="system" width="112" height="128"/>
+    </resources>
 </document>

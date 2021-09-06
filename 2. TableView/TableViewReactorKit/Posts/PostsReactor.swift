@@ -11,10 +11,12 @@ import ReactorKit
 class PostsReactor: Reactor {
     enum Action {
         case readPosts
+        case obBookmark(Int)
     }
     
     enum Mutation {
         case setPosts([PostModel])
+        case setBookmark(Int)
     }
     
     struct State {
@@ -27,6 +29,8 @@ class PostsReactor: Reactor {
         switch action {
         case .readPosts: return APIManager.shared.readPosts()
             .map { Mutation.setPosts($0) }
+        case .obBookmark(let row):
+            return Observable.just(Mutation.setBookmark(row))
         }
     }
     
@@ -34,6 +38,7 @@ class PostsReactor: Reactor {
         var newState = state
         switch mutation {
         case let .setPosts(posts): newState.posts = posts
+        case let .setBookmark(row): newState.posts[row].bookmark = !(currentState.posts[row].bookmark ?? false)
         }
         return newState
     }

@@ -11,4 +11,5 @@ struct PostModel: Codable {
     let id: Int
     let title: String
     let body: String
+    var bookmark: Bool? = false
 }

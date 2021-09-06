@@ -49,7 +49,11 @@ class PostsViewController: UIViewController, StoryboardView {
                     guard let cell = tableView.dequeue(Reusable.postCell) else { return UITableViewCell() }
                     cell.title.text = post.title
                     cell.body.text = post.body
-                    
+                    cell.bookmark.isSelected = post.bookmark ?? false
+                    cell.bookmark.rx.tap
+                        .map { Reactor.Action.obBookmark(row) }
+                        .bind(to: reactor.action)
+                        .disposed(by: cell.disposeBag)
                     if let user = self.userCache.object(forKey: "\(post.userId)" as NSString) {
                         cell.user.text = user as String
                     } else {
