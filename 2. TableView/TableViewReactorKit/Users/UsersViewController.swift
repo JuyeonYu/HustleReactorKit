@@ -25,7 +25,7 @@ class UsersViewController: UIViewController, StoryboardView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reactor = UsersReactor()
-        tableView.delegate = self
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.register(Reusable.defaultCell)
         tableView.register(Reusable.userHeader)
     }
@@ -35,10 +35,8 @@ class UsersViewController: UIViewController, StoryboardView {
             .map { _ in Reactor.Action.readUsers }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
-        tableView.rx.itemSelected
-            .bind(onNext: { indexPath in
-                let user = reactor.currentState.users[indexPath.row]
+        tableView.rx.modelSelected(UserModel.self)
+            .bind(onNext: { user in
                 let alert = UIAlertController()
                 alert.addAction(UIAlertAction(title: "phone", style: .default, handler: { _ in
                     if let url = URL(string: "tel://\(user.phone)") {
