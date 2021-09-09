@@ -29,9 +29,9 @@ class UsersReactor: Reactor {
         switch action {
         case .readUsers:
             return APIManager.shared.readUsers()
-                .map { Mutation.setUsers($0) }
+                .map { .setUsers($0) }
         case .onFilter(let id):
-            return Observable.just(Mutation.setFileter(id))
+            return .just(.setFileter(id))
         }
     }
     

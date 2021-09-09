@@ -26,11 +26,11 @@ class CommentReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .readComments:
-            return Observable.concat([
+            return .concat([
                 APIManager.shared.readComments()
-                    .map { Mutation.setComments($0) },
+                    .map { .setComments($0) },
                 APIManager.shared.readPosts()
-                    .map { Mutation.setPosts($0)}
+                    .map { .setPosts($0)}
             ])
         }
     }
@@ -40,12 +40,12 @@ class CommentReactor: Reactor {
         case .setComments(let comments):
             newState.sections.append(
                 .CommentSection(title: "comments",
-                                items: comments.map { SectionItem.CommentSectionItem($0) }
+                                items: comments.map { .CommentSectionItem($0) }
                 ))
         case .setPosts(let posts):
             newState.sections.append(
                 .PostSection(title: "posts",
-                             items: posts.map { SectionItem.PostSectionItem($0) }))
+                             items: posts.map { .PostSectionItem($0) }))
         }
         return newState
     }

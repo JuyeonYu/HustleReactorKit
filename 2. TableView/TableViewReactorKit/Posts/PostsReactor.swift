@@ -33,8 +33,8 @@ class PostsReactor: Reactor {
         case .readPosts: return APIManager.shared.readPosts()
             .map { Mutation.setPosts($0) }
         case .obBookmark(let row):
-            return Observable.just(Mutation.setBookmark(row))
-        case .loadMore: return Observable.just(Mutation.setPage(currentState.page + 1))
+            return Observable.just(.setBookmark(row))
+        case .loadMore: return .just(.setPage(currentState.page + 1))
         }
     }
     

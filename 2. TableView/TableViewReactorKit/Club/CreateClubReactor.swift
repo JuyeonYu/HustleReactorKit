@@ -48,26 +48,26 @@ class CreateClubReactor: Reactor {
         switch action {
         case .inputName(let name):
             guard name.count > 3 else {
-                return Observable.concat([
-                    Observable.just(Mutation.setNameState(.invalid(.short))),
-                    Observable.just(Mutation.setName(name))
+                return .concat([
+                    .just(.setNameState(.invalid(.short))),
+                    .just(.setName(name))
                 ])
             }
             guard name.count < 11 else {
-                return Observable.concat([
-                    Observable.just(Mutation.setNameState(.invalid(.long))),
-                    Observable.just(Mutation.setName(name))
+                return .concat([
+                    .just(.setNameState(.invalid(.long))),
+                    .just(.setName(name))
                 ])
             }
             UserInfo.name.onNext(name)
-            return Observable.concat([
-                Observable.just(Mutation.setNameState(.valid)),
-                Observable.just(Mutation.setName(name))
+            return .concat([
+                .just(.setNameState(.valid)),
+                .just(.setName(name))
             ])
         }
     }
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
-        return Observable.merge(mutation, UserInfo.name.map { Mutation.setName($0)})
+        return .merge(mutation, UserInfo.name.map { .setName($0)})
     }
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
