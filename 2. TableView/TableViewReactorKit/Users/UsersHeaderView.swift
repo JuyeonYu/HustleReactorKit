@@ -21,7 +21,7 @@ class UsersHeaderView: UITableViewHeaderFooterView {
     func toggleOption(isFilter1: Bool) {
         filter1.layer.borderWidth = 1
         filter2.layer.borderWidth = 1
-        onFilter?(false)
+        onFilter?(isFilter1)
         if isFilter1 {
             filter1.layer.borderColor = UIColor.gray.cgColor
             filter1.backgroundColor = .blue

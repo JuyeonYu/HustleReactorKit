@@ -21,6 +21,7 @@ class UsersReactor: Reactor {
     
     struct State {
         var users: [UserModel] = []
+        var filteredUsers: [UserModel] = []
     }
     
     let initialState: State = State()
@@ -38,15 +39,17 @@ class UsersReactor: Reactor {
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
-        case let .setUsers(users): newState.users = users
+        case let .setUsers(users):
+            newState.users = users
+            newState.filteredUsers = users
         case .setFileter(let id):
             if id == 1 {
-                newState.users = newState.users.filter {
-                    $0.name.count % 2 == 0
+                newState.filteredUsers = newState.users.filter {
+                    $0.id % 2 == 0
                 }
             } else {
-                newState.users = newState.users.filter {
-                    $0.name.count % 3 == 0
+                newState.filteredUsers = newState.users.filter {
+                    $0.id % 2 == 1
                 }
             }
         }

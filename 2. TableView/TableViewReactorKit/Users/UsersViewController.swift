@@ -58,7 +58,7 @@ class UsersViewController: UIViewController, StoryboardView {
             })
             .disposed(by: disposeBag)
 
-        reactor.state.map { $0.users }
+        reactor.state.map { $0.filteredUsers }
             .bind(to: tableView.rx.items(Reusable.defaultCell)) { indexPath, user, cell in
                 cell.textLabel?.text = user.name
             }
