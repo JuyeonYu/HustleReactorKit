@@ -54,12 +54,11 @@ extension CommentsViewController {
                 switch dataSource[idxPath] {
                 case .CommentSectionItem(let item):
                     let cell = table.dequeue(Reusable.commentCell)!
-                    cell.body.text = item.body
-                    cell.name.text = item.name
-                    cell.mail.text = item.email
+                    cell.reactor = CommentCellReactor(comment: item)
                     return cell
                 case .PostSectionItem(let post):
                     let cell = table.dequeue(Reusable.postCell)!
+                    cell.reactor = PostCellReactor(title: post.title, body: post.body)
                     cell.title.text = post.title
                     cell.body.text = post.body
                     return cell

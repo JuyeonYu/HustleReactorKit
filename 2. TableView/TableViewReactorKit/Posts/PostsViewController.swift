@@ -58,9 +58,8 @@ class PostsViewController: UIViewController, StoryboardView {
                     return cell
                 } else {
                     guard let cell = tableView.dequeue(Reusable.postCell) else { return UITableViewCell() }
-                    cell.title.text = post.title
-                    cell.body.text = post.body
-                    cell.bookmark.isSelected = post.bookmark ?? false
+                    cell.reactor = PostCellReactor(title: post.title,
+                                                   body: post.body)
                     cell.bookmark.rx.tap
                         .map { Reactor.Action.obBookmark(row) }
                         .bind(to: reactor.action)

@@ -7,8 +7,9 @@
 
 import UIKit
 import RxSwift
+import ReactorKit
 
-class PostTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell, StoryboardView {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var body: UILabel!
     @IBOutlet weak var user: UILabel!
@@ -23,5 +24,14 @@ class PostTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.disposeBag = DisposeBag()
+    }
+    func bind(reactor: PostCellReactor) {
+        reactor.state
+            .subscribe(onNext: {
+                self.title.text = $0.title
+                self.body.text = $0.body
+                self.bookmark.isSelected = $0.isBookmarked
+            })
+            .disposed(by: disposeBag)
     }
 }

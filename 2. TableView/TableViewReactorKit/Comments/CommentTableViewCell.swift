@@ -6,14 +6,25 @@
 //
 
 import UIKit
+import ReactorKit
+import RxSwift
 
-class CommentTableViewCell: UITableViewCell {
-
+class CommentTableViewCell: UITableViewCell, StoryboardView {
+    var disposeBag = DisposeBag()
     @IBOutlet weak var body: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var mail: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    func bind(reactor: CommentCellReactor) {
+        reactor.state
+            .subscribe(onNext: { [weak self] in
+                self?.body.text = $0.body
+                self?.name.text = $0.name
+                self?.mail.text = $0.mail
+            })
+            .disposed(by: disposeBag)
     }
 }
