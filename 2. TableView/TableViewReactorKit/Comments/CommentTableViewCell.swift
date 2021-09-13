@@ -17,6 +17,7 @@ class CommentTableViewCell: UITableViewCell, StoryboardView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        disposeBag = DisposeBag()
     }
     func bind(reactor: CommentCellReactor) {
         reactor.state
