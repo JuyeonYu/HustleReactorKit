@@ -31,11 +31,16 @@ class CreateClubViewController: UIViewController, StoryboardView {
             .disposed(by: disposeBag)
     }
     func bind(reactor: CreateClubReactor) {
+        bind(to: reactor)
+        bind(from: reactor)
+    }
+    fileprivate func bind(to reactor: CreateClubReactor) {
         name.rx.text.orEmpty.skip(1)
             .map {  Reactor.Action.inputName($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
+    }
+    fileprivate func bind(from reactor: CreateClubReactor) {
         reactor.state.map { $0.helpMessage }
             .bind(to: help.rx.text)
             .disposed(by: disposeBag)

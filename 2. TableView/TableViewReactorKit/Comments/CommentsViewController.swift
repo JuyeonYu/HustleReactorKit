@@ -29,16 +29,23 @@ class CommentsViewController: UIViewController, StoryboardView, UIScrollViewDele
     }
     
     func bind(reactor: CommentReactor) {
+        bind(to: reactor)
+        bind(from: reactor)
+    }
+    fileprivate func bind(to reactor: CommentReactor) {
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         rx.viewWillAppear
             .map { _ in Reactor.Action.readComments }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+    }
+    fileprivate func bind(from reactor: CommentReactor) {
         reactor.state
             .map { $0.sections }
             .bind(to: tableView.rx.items(dataSource: CommentsViewController.dataSource()))
             .disposed(by: disposeBag)
     }
+    
 }
 
 extension CommentsViewController: UITableViewDelegate {

@@ -31,6 +31,10 @@ class PostsViewController: UIViewController, StoryboardView {
     }
     
     func bind(reactor: PostsReactor) {
+        bind(to: reactor)
+        bind(from: reactor)
+    }
+    fileprivate func bind(to reactor: PostsReactor) {
         rx.viewWillAppear
             .map { _ in Reactor.Action.readPosts }
             .bind(to: reactor.action)
@@ -47,7 +51,8 @@ class PostsViewController: UIViewController, StoryboardView {
             .map { _ in Reactor.Action.loadMore}
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-                        
+    }
+    fileprivate func bind(from reactor: PostsReactor) {
         reactor.state
             .map { $0.posts }
             .bind(to: tableView.rx.items) { tableView, row, post in
